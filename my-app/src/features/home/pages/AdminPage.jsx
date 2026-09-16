@@ -11,8 +11,9 @@ export default function AdminPage() {
 
     const add = (e) => {
         e.preventDefault()
-        if (!name.trim()) return
-        setUsers(u => [...u, { username: name.trim(), role: 'user' }])
+        const trimmedName = name.trim()
+        if (!trimmedName || users.some(u => u.username === trimmedName)) return
+        setUsers(u => [...u, { username: trimmedName, role: 'user' }])
         setName('')
     }
 
