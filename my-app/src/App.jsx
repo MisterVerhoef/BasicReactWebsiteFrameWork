@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import ProtectedRoute from './router/ProtectedRoute'
 import HomePage from './features/home/pages/HomePage'
 import LoginPage from './features/home/pages/LoginPage'
+import AccountPage from './features/home/pages/AccountPage'
 import AdminPage from './features/home/pages/AdminPage'
 import ArchitecturePage from './features/home/pages/ArchitecturePage'
 import PageLayout from './components/PageLayout'
@@ -17,6 +18,7 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/login" element={<LoginPage />} />
+                <Route path="/account" element={<ProtectedRoute><AccountPage /></ProtectedRoute>} />
                 <Route path="/architecture" element={<ArchitecturePage />} />
                 <Route
                     path="/admin"
